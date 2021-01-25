@@ -1,0 +1,59 @@
+﻿<Window x:Class="Primeira_Intereface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Primeira_Intereface"
+        mc:Ignorable="d"
+        Title="Primeira Interface" Height="450" Width="800">
+    <Grid Name="Principal">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="175"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="175"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Name="Botoes">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Name="BtBindingSlide" Grid.Column="0" Grid.Row="0" Click="BtBindingSlide_Click">Show Slide</Button>
+            <Button Name="BtBindiningTextBox" Grid.Column="0" Grid.Row="1" Click="BtBindiningTextBox_Click" >Show TextBoxes</Button>
+            
+        </Grid>
+        <Grid Name="SlideGrid" Grid.Column="1">
+            <StackPanel>
+                <TextBox Width="100" Name="MeuQuadro" Margin="160" Text="{Binding ElementName=MeuSlide, 
+            Path=Value, Mode=TwoWay}" Grid.Column="1"></TextBox>
+                <Slider Width="350" Name="MeuSlide" MinHeight="0" Maximum="100" Grid.Column="1"></Slider>
+            </StackPanel>
+        </Grid>
+        <Grid Name="TextBoxesGrid" Grid.Column="1">
+            <StackPanel HorizontalAlignment="Center">
+                <Label>Nome:</Label>
+                <TextBox Width="100" HorizontalAlignment="Left" Background="LightCyan" Text="{Binding Path=Nome, Mode=TwoWay}"></TextBox>
+                <Label>Sobrenome:</Label>
+                <TextBox Width="100" HorizontalAlignment="Left" Background="LightCyan" Text="{Binding Path=SobreNome, Mode=TwoWay}"></TextBox>
+                <Label>Nome Completo:</Label>
+                <TextBox Width="100" HorizontalAlignment="Left" Background="LightCyan" Text="{Binding Path=NomeCompleto, Mode=TwoWay}"></TextBox>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+
+
+
+</Window>
